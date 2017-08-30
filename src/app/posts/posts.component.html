@@ -1,5 +1,11 @@
 <h2>Posts</h2>
 
-<section class="posts">
-  <dcs-posts-list [loading]="loading$ | async" [posts]="posts$ | async"></dcs-posts-list>
-</section>
+<div class="posts">
+  <section class="post-list">
+    <dcs-posts-list [loading]="loading$ | async" [posts]="posts$ | async"></dcs-posts-list>
+  </section>
+
+  <section class="post-preview">
+    <dcs-post-detail [post]="currentPost$ | async"></dcs-post-detail>
+  </section>
+</div>

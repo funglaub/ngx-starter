@@ -1,7 +1,12 @@
-h2 {
-  padding: 1rem 0.5rem;
-}
+:host {
+  order: 1;
+  width: 40%;
 
-.title {
-  padding: 1rem 0.5rem;
+  h2 {
+    padding: 1rem 0.5rem;
+  }
+
+  .title {
+    padding: 1rem 0.5rem;
+  }
 }

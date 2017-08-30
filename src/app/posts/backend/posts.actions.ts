@@ -42,7 +42,15 @@ export class PostsActions {
   public fetchAll(): IAction {
     return {
       type: actionNames.read,
-      payload: this.http.get(`${BASE_URL}/posts`)
+      payload: this.http.get(`${BASE_URL}/posts?_limit=10`)
+    };
+  }
+
+  @dispatch()
+  public setCurrentEntity(id: string | number): IAction {
+    return {
+      type: actionNames.readOne,
+      payload: +id
     };
   }
 }

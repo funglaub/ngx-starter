@@ -1,1 +1,9 @@
-asdasd
+<article *ngIf="post">
+  <header>{{ post.title }}</header>
+
+  <section>
+    {{ post.body }}
+  </section>
+
+  <footer>created by user ID {{ post.userId }}</footer>
+</article>

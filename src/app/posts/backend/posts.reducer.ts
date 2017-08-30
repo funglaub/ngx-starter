@@ -1,9 +1,10 @@
 import { IState, IAction } from '@dcs/ngx-utils';
 import { actionNames } from './posts.actions';
-import { fromJS } from 'immutable';
+import { fromJS, Map } from 'immutable';
 
 const initialState: IState = fromJS({
   entities: [],
+  currentEntityId: null,
   loading: false,
   error: null
 });
@@ -32,6 +33,9 @@ export const postsReducer = function(
           entities: action.payload
         })
       );
+
+    case actionNames.readOne:
+      return state.set('currentEntityId', action.payload);
   }
 
   return state;
