@@ -9,8 +9,9 @@ const ENV = (process.env.ENV = process.env.NODE_ENV = 'development');
 const HMR = hasProcessFlag('hot');
 const AOT = false;
 const APP_ENV = process.env.APP_ENV || ENV;
+const PORT = process.env.PORT || 3000;
 
-const options = { AOT, ENV, HMR, APP_ENV };
+const options = { AOT, ENV, HMR, APP_ENV, PORT };
 
 export default webpackMerge(commonConfig(options), {
   devtool: 'cheap-module-eval-source-map',
@@ -56,7 +57,7 @@ export default webpackMerge(commonConfig(options), {
   ],
 
   devServer: {
-    port: 3000,
+    port: PORT,
     host: '0.0.0.0',
     historyApiFallback: true,
     quiet: true,

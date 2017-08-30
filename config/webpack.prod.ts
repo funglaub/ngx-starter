@@ -12,8 +12,9 @@ const ENV = (process.env.ENV = process.env.NODE_ENV = 'production');
 const HMR = false;
 const AOT = process.env.BUILD_AOT || hasNpmFlag('aot');
 const APP_ENV = process.env.APP_ENV || ENV;
+const PORT = 8080;
 
-const options = { AOT, ENV, HMR, APP_ENV };
+const options = { AOT, ENV, HMR, APP_ENV, PORT };
 
 export default webpackMerge(commonConfig(options), {
   devtool: 'source-map',

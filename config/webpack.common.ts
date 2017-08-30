@@ -39,7 +39,7 @@ export default function(options: any): any {
     },
     output: {
       path: root('build', options.APP_ENV),
-      publicPath: 'http://localhost:8080/',
+      publicPath: `http://localhost:${options.PORT}`,
       filename: '[name].[hash].bundle.js',
       sourceMapFilename: '[file].map',
       chunkFilename: '[name]-[id].[chunkhash].chunk.js'
