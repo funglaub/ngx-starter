@@ -4,7 +4,7 @@ import { fromJS, Map } from 'immutable';
 
 const initialState: IState = fromJS({
   entities: [],
-  currentEntityId: null,
+  currentEntityId: {},
   loading: false,
   error: null
 });
